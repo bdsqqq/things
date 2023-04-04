@@ -1,0 +1,5 @@
+---
+"@bdsqqq/lazytm": patch
+---
+
+Init
