@@ -1,3 +1,3 @@
-export const lazyThing = () => {
-  console.log("lazy thing");
-};
+import { makeLazySplitIterator } from "./lazySplit";
+
+export { makeLazySplitIterator };
