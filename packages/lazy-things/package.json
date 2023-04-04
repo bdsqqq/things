@@ -1,6 +1,7 @@
 {
   "name": "@bdsqqq/lazy-things",
-  "version": "0.0.1",
+  "version": "0.0.2",
+  "access": "public",
   "description": "",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
