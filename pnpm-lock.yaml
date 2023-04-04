@@ -47,12 +47,12 @@ importers:
   apps/web:
     specifiers:
       '@babel/core': ^7.0.0
+      '@bdsqqq/lazytm': workspace:*
       '@types/node': ^17.0.12
       '@types/react': ^18.0.22
       '@types/react-dom': ^18.0.7
       eslint: 7.32.0
       eslint-config-custom: workspace:*
-      lazy-things: workspace:*
       next: ^13.1.1
       react: 18.2.0
       react-dom: 18.2.0
@@ -60,7 +60,7 @@ importers:
       typescript: ^4.5.3
       ui: workspace:*
     dependencies:
-      lazy-things: link:../../packages/lazy-things
+      '@bdsqqq/lazytm': link:../../packages/lazytm
       next: 13.2.4_z72xxk7vwlamvgqemvc4ptm4du
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
@@ -92,7 +92,7 @@ importers:
     devDependencies:
       typescript: 4.9.5
 
-  packages/lazy-things:
+  packages/lazytm:
     specifiers:
       tsconfig: workspace:*
       tsup: ^6.7.0
