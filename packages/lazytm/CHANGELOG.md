@@ -1,7 +1,8 @@
-# @bdsqqq/lazy-things
+# @bdsqqq/lazytm
 
-## 0.0.2
+## 0.0.1
 
 ### Patch Changes
 
-- Update name
+- Initial implementation
+- 319ad62: Init
