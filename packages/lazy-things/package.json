@@ -1,5 +1,7 @@
 {
-  "name": "@bdsqqq/lazy-things",
+  "name": "lazy-things",
+  "displayName": "lazy-things",
+  "scope": "@bdsqqq",
   "version": "0.0.2",
   "access": "public",
   "description": "",
@@ -14,6 +16,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "tsup": "^6.7.0"
+    "tsup": "^6.7.0",
+    "tsconfig": "workspace:*"
   }
 }

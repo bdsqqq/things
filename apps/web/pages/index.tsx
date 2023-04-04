@@ -1,4 +1,5 @@
 import { Button } from "ui";
+import { lazyThing } from "lazy-things";
 
 export default function Web() {
   return (
