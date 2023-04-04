@@ -1,6 +1,5 @@
 {
-  "name": "lazy-things",
-  "scope": "@bdsqqq",
+  "name": "@bdsqqq/lazy-things",
   "version": "0.0.1",
   "description": "",
   "main": "./dist/index.js",
