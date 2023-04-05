@@ -6,12 +6,16 @@
   "description": "Why compute something now, when you can compute it later?",
   "displayName": "lazy™",
   "main": "./dist/index.js",
+  "module": "dist/index.mjs",
   "types": "./dist/index.d.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "tsup src/index.ts --format cjs --dts",
+    "build": "tsup src/index.ts --format cjs,esm --dts",
     "dev": "npm run build -- --watch"
   },
+  "files": [
+    "dist/**/*"
+  ],
   "keywords": [],
   "author": "Igor Bedesqui",
   "license": "MIT",
