@@ -26,7 +26,7 @@ export function makeLazySplitIterator(str: string, match: string) {
             pointer += match.length;
             iterationCount++;
             found = false;
-            return { value: result, done: false };
+            return result;
           }
           pointer++;
         }
