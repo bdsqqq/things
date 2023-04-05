@@ -1,0 +1,305 @@
+---
+import Glitch from "../components/glitch.astro";
+import GithubIcon from "../components/githubIcon.astro";
+import CopyButton from "../components/copyButton.astro";
+
+import { clsx } from "clsx";
+import { getEntryBySlug } from "astro:content";
+
+export const focusStyles = `
+  !outline-none focus-visible:ring-1 ring-offset-8 ring-gray-A10 ring-offset-gray-0
+`;
+
+const pyramid = await getEntryBySlug("codesnippets", "pyramid-of-hell");
+const heaven = await getEntryBySlug("codesnippets", "heaven-one-liners");
+const terror = await getEntryBySlug("codesnippets", "tower-of-terror");
+const awesome = await getEntryBySlug("codesnippets", "awesome");
+
+const { Content: Pyramid } = await pyramid.render();
+const { Content: Heaven } = await heaven.render();
+const { Content: Terror } = await terror.render();
+const { Content: Awesome } = await awesome.render();
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/favicon/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/favicon/favicon-16x16.png"
+    />
+    <link rel="manifest" href="/favicon/site.webmanifest" />
+    <link
+      rel="mask-icon"
+      href="/favicon/safari-pinned-tab.svg"
+      color="#000000"
+    />
+    <link rel="shortcut icon" href="/favicon/favicon.ico" />
+    <meta name="msapplication-TileColor" content="#da532c" />
+    <meta name="msapplication-config" content="/favicon/browserconfig.xml" />
+    <meta name="theme-color" content="#ffffff" />
+
+    <meta
+      name="description"
+      content={"Why compute something now, when you can compute it later?"}
+    />
+
+    <meta
+      property="og:title"
+      content={"Lazy™ — Delayed compute for JavaScript Iterators."}
+    />
+    <meta
+      property="og:description"
+      content={`Why compute something now, when you can compute it later?`}
+    />
+    <meta property="og:image" content="/og.jpg" />
+    <meta name="twitter:image" content="/og.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Lazy™ — Delayed compute for JavaScript Iterators.</title>
+
+    <!-- I like the numbers, sorry -->
+    <!-- <script
+      async
+      defer
+      data-website-id="fa699323-b2de-4c13-b758-1240e28aebf2"
+      src="https://analytics.igorbedesqui.com/umami.js"
+    ></script> -->
+  </head>
+  <body
+    class="min-h-screen bg-black text-gray-A11 selection:bg-gray-A11 selection:text-gray-2"
+  >
+    <div
+      class="h-full flex flex-col items-center justify-between gap-8 p-6 sm:pt-24"
+    >
+      <main
+        class="max-w-3xl mx-auto flex flex-col gap-6 justify-center items-center relative"
+      >
+        <div class="max-w-xl w-full mx-auto">
+          <div class="text-left space-y-4">
+            <div class="space-y-2">
+              <div class="flex justify-between items-end">
+                <div>
+                  <div class="max-md:mb-1">
+                    <Glitch text="v2.3" />
+                  </div>
+                  <h1
+                    class="before:bg-shine relative text-gray-A12 text-4xl md:text-7xl leading-relaxed md:leading-snug tracking-tighter text-slate-12 font-bold"
+                  >
+                    lazy™
+                  </h1>
+                </div>
+
+                <div>
+                  <div class="flex flex-col gap-2 items-end">
+                    <div class="hidden md:block">
+                      <CopyButton />
+                    </div>
+                    <a
+                      class={clsx(
+                        "flex items-center gap-2 hover:text-gray-12 transition-colors focus:text-gray-12 rounded",
+                        focusStyles
+                      )}
+                      href="https://github.com/bdsqqq/coisas/tree/main/packages/lazytm"
+                    >
+                      <div class="transform translate-y-px">
+                        <GithubIcon />
+                      </div> bdsqqq/lazytm
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="max-w-xl w-full mx-auto mt-12">
+                <ul class="flex justify-between text-gray-8 font-bold text-sm">
+                  <li>0 dependencies</li>
+                  <li>{"<1kb gzipped"}</li>
+                  <li>Fully typesafe</li>
+                </ul>
+              </div>
+
+              <h2 class="text-justify">
+                <span>
+                  Why compute something now, when you can compute it later?
+                </span>
+              </h2>
+            </div>
+
+            <div class="flex justify-center mt-4 md:hidden">
+              <CopyButton />
+            </div>
+          </div>
+        </div>
+
+        <div class="w-full mx-auto space-y-6">
+          <div class="-mx-6 lg:mx-auto max-lg:sticky top-0 z-10">
+            <div class="bg-black max-lg:pt-4 max-lg:px-6 w-full">
+              <p class="max-w-xl mx-auto">
+                <span class="story transition-colors"
+                  >String.split() is an useful API,</span
+                >
+                <span class="story transition-colors">
+                  until you realise it computes EVERYTHING eagarly, even if you
+                  only need a single entry.</span
+                >
+                <span class="story transition-colors"
+                  >Lazy™ allows you to compute only what you need, when you need
+                  it.</span
+                >
+              </p>
+            </div>
+            <div
+              class="bg-gradient-to-b from-black to-transparent h-20 -mb-10 lg:hidden pointer-events-none"
+            >
+            </div>
+          </div>
+
+          <div class="w-full lg:overflow-x-visible">
+            <div class="flex max-lg:flex-col group pointer-events-none">
+              <div
+                tabindex="0"
+                class={clsx(
+                  "code-card transform group-hover:opacity-75 group-focus-within:opacity-75 group-focus-within:blur-sm group-hover:blur-sm focus:!blur-none hover:!blur-none filter focus:!opacity-100 hover:!opacity-100 pointer-events-auto h-fit max-lg:max-w-[calc(100vw_-_3rem)] lg:min-w-96 max-lg:[&:not(:first-child)]:-mt-24 lg:[&:not(:first-child)]:-ml-32 transition-all rounded-sm",
+                  focusStyles
+                )}
+              >
+                <Heaven />
+              </div>
+
+              <div
+                tabindex="0"
+                class={clsx(
+                  "code-card transform group-hover:opacity-75 group-focus-within:opacity-75 group-focus-within:blur-sm group-hover:blur-sm focus:!blur-none hover:!blur-none filter focus:!opacity-100 hover:!opacity-100 pointer-events-auto h-fit max-lg:max-w-[calc(100vw_-_3rem)] lg:min-w-96 max-lg:[&:not(:first-child)]:-mt-24 lg:[&:not(:first-child)]:-ml-32 transition-all rounded-sm",
+                  focusStyles
+                )}
+              >
+                <Pyramid />
+              </div>
+
+              <div
+                tabindex="0"
+                class={clsx(
+                  "code-card transform group-hover:opacity-75 group-focus-within:opacity-75 group-focus-within:blur-sm group-hover:blur-sm focus:!blur-none hover:!blur-none filter focus:!opacity-100 hover:!opacity-100 pointer-events-auto h-fit max-lg:max-w-[calc(100vw_-_3rem)] lg:min-w-96 max-lg:[&:not(:first-child)]:-mt-24 lg:[&:not(:first-child)]:-ml-32 transition-all rounded-sm",
+                  focusStyles
+                )}
+              >
+                <Terror />
+              </div>
+
+              <div
+                tabindex="0"
+                class={clsx(
+                  "code-card transform group-hover:opacity-75 group-focus-within:opacity-75 group-focus-within:blur-sm group-hover:blur-sm focus:!blur-none hover:!blur-none filter focus:!opacity-100 hover:!opacity-100 pointer-events-auto h-fit max-lg:max-w-[calc(100vw_-_3rem)] lg:min-w-96 max-lg:[&:not(:first-child)]:-mt-24 lg:[&:not(:first-child)]:-ml-32 transition-all rounded-sm",
+                  focusStyles
+                )}
+              >
+                <Awesome />
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+      <footer class="relative z-10">
+        Made by <a
+          class={clsx(
+            "hover:text-gray-12 focus:text-gray-12 transition-colors rounded whitespace-nowrap",
+            focusStyles
+          )}
+          href="https://www.igorbedesqui.com/"
+          ><img
+            class="inline-block w-4 h-4 rounded-full"
+            src="./profile.jpg"
+            alt=""
+          /> Igor Bedesqui</a
+        >, inpired by Rust <abbr
+          title="by the way"
+          class="text-xs text-gray-8 italict align-top transform -translate-x-2 -translate-y-1 inline-block rotate-[24deg]"
+          >btw</abbr
+        >
+      </footer>
+    </div>
+  </body>
+</html>
+<script>
+  const story = document.querySelectorAll(".story");
+  const storyBits = Array.from(story);
+  const codeSnippets = document.querySelectorAll(".code-card");
+  const codeSnippetsArray = Array.from(codeSnippets);
+
+  codeSnippetsArray.forEach((el, i) => {
+    el.addEventListener("focus", () => {
+      storyBits
+        .filter((_, j) => j !== i)
+        .forEach((el) => {
+          el.classList.add("text-gray-8");
+        });
+      storyBits[i]?.classList.add("text-gray-12");
+    });
+    el.addEventListener("blur", () => {
+      storyBits
+        .filter((_, j) => j !== i)
+        .forEach((el) => {
+          el.classList.remove("text-gray-8");
+        });
+      storyBits[i]?.classList.remove("text-gray-12");
+    });
+    el.addEventListener("mouseover", () => {
+      storyBits
+        .filter((_, j) => j !== i)
+        .forEach((el) => {
+          el.classList.add("text-gray-8");
+        });
+      storyBits[i]?.classList.add("text-gray-12");
+    });
+    el.addEventListener("mouseleave", () => {
+      storyBits
+        .filter((_, j) => j !== i)
+        .forEach((el) => {
+          el.classList.remove("text-gray-8");
+        });
+      storyBits[i]?.classList.remove("text-gray-12");
+    });
+  });
+</script>
+<style is:global>
+  :root {
+    --astro-code-color-text: var(--color-gray-9);
+    --astro-code-color-background: var(--color-gray-1);
+    --astro-code-token-constant: var(--color-gray-12);
+    --astro-code-token-string: var(--color-gray-11);
+    --astro-code-token-comment: var(--color-gray-A7);
+    --astro-code-token-keyword: var(--color-gray-12);
+    --astro-code-token-parameter: var(--color-gray-11);
+    --astro-code-token-function: var(--color-gray-12);
+    --astro-code-token-string-expression: var(--color-gray-11);
+    --astro-code-token-punctuation: var(--color-gray-11);
+    --astro-code-token-link: var(--color-gray-11);
+  }
+
+  .astro-code {
+    @apply p-4 rounded shadow-lg-up lg:shadow-lg shadow-gray-A3 lg:shadow-gray-A3 border border-gray-A5;
+  }
+
+  .code-card:hover ~ .code-card {
+    @apply max-lg:translate-y-28 lg:translate-x-36;
+  }
+  .code-card:focus-within ~ .code-card {
+    @apply max-lg:translate-y-28 lg:translate-x-36;
+  }
+</style>
