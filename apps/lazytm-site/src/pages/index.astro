@@ -10,15 +10,13 @@ export const focusStyles = `
   !outline-none focus-visible:ring-1 ring-offset-8 ring-gray-A10 ring-offset-gray-0
 `;
 
-const pyramid = await getEntryBySlug("codesnippets", "pyramid-of-hell");
-const heaven = await getEntryBySlug("codesnippets", "heaven-one-liners");
-const terror = await getEntryBySlug("codesnippets", "tower-of-terror");
-const awesome = await getEntryBySlug("codesnippets", "awesome");
+const basicUsage = await getEntryBySlug("codesnippets", "basic-usage");
+const harshUsage = await getEntryBySlug("codesnippets", "harsh-usage");
+const lazyUsage = await getEntryBySlug("codesnippets", "lazy-usage");
 
-const { Content: Pyramid } = await pyramid.render();
-const { Content: Heaven } = await heaven.render();
-const { Content: Terror } = await terror.render();
-const { Content: Awesome } = await awesome.render();
+const { Content: BasicUsage } = await basicUsage.render();
+const { Content: HarshUsage } = await harshUsage.render();
+const { Content: LazyUsage } = await lazyUsage.render();
 ---
 
 <html lang="en">
@@ -97,7 +95,7 @@ const { Content: Awesome } = await awesome.render();
               <div class="flex justify-between items-end">
                 <div>
                   <div class="max-md:mb-1">
-                    <Glitch text="v2.3" />
+                    <Glitch text="v0.0.1" />
                   </div>
                   <h1
                     class="before:bg-shine relative text-gray-A12 text-4xl md:text-7xl leading-relaxed md:leading-snug tracking-tighter text-slate-12 font-bold"
@@ -116,7 +114,7 @@ const { Content: Awesome } = await awesome.render();
                         "flex items-center gap-2 hover:text-gray-12 transition-colors focus:text-gray-12 rounded",
                         focusStyles
                       )}
-                      href="https://github.com/bdsqqq/coisas/tree/main/packages/lazytm"
+                      href="https://github.com/bdsqqq/things/tree/main/packages/lazytm"
                     >
                       <div class="transform translate-y-px">
                         <GithubIcon />
@@ -175,41 +173,31 @@ const { Content: Awesome } = await awesome.render();
               <div
                 tabindex="0"
                 class={clsx(
-                  "code-card transform group-hover:opacity-75 group-focus-within:opacity-75 group-focus-within:blur-sm group-hover:blur-sm focus:!blur-none hover:!blur-none filter focus:!opacity-100 hover:!opacity-100 pointer-events-auto h-fit max-lg:max-w-[calc(100vw_-_3rem)] lg:min-w-96 max-lg:[&:not(:first-child)]:-mt-24 lg:[&:not(:first-child)]:-ml-32 transition-all rounded-sm",
+                  "step-card transform group-hover:opacity-75 group-focus-within:opacity-75 group-focus-within:blur-sm group-hover:blur-sm focus:!blur-none hover:!blur-none filter focus:!opacity-100 hover:!opacity-100 pointer-events-auto h-fit max-lg:max-w-[calc(100vw_-_3rem)] lg:min-w-96 max-lg:[&:not(:first-child)]:-mt-24 lg:[&:not(:first-child)]:-ml-48 transition-all rounded-sm",
                   focusStyles
                 )}
               >
-                <Heaven />
+                <BasicUsage />
               </div>
 
               <div
                 tabindex="0"
                 class={clsx(
-                  "code-card transform group-hover:opacity-75 group-focus-within:opacity-75 group-focus-within:blur-sm group-hover:blur-sm focus:!blur-none hover:!blur-none filter focus:!opacity-100 hover:!opacity-100 pointer-events-auto h-fit max-lg:max-w-[calc(100vw_-_3rem)] lg:min-w-96 max-lg:[&:not(:first-child)]:-mt-24 lg:[&:not(:first-child)]:-ml-32 transition-all rounded-sm",
+                  "step-card transform group-hover:opacity-75 group-focus-within:opacity-75 group-focus-within:blur-sm group-hover:blur-sm focus:!blur-none hover:!blur-none filter focus:!opacity-100 hover:!opacity-100 pointer-events-auto h-fit max-lg:max-w-[calc(100vw_-_3rem)] lg:min-w-96 max-lg:[&:not(:first-child)]:-mt-24 lg:[&:not(:first-child)]:-ml-48 transition-all rounded-sm",
                   focusStyles
                 )}
               >
-                <Pyramid />
+                <HarshUsage />
               </div>
 
               <div
                 tabindex="0"
                 class={clsx(
-                  "code-card transform group-hover:opacity-75 group-focus-within:opacity-75 group-focus-within:blur-sm group-hover:blur-sm focus:!blur-none hover:!blur-none filter focus:!opacity-100 hover:!opacity-100 pointer-events-auto h-fit max-lg:max-w-[calc(100vw_-_3rem)] lg:min-w-96 max-lg:[&:not(:first-child)]:-mt-24 lg:[&:not(:first-child)]:-ml-32 transition-all rounded-sm",
+                  "step-card transform group-hover:opacity-75 group-focus-within:opacity-75 group-focus-within:blur-sm group-hover:blur-sm focus:!blur-none hover:!blur-none filter focus:!opacity-100 hover:!opacity-100 pointer-events-auto h-fit max-lg:max-w-[calc(100vw_-_3rem)] lg:min-w-96 max-lg:[&:not(:first-child)]:-mt-24 lg:[&:not(:first-child)]:-ml-48 transition-all rounded-sm",
                   focusStyles
                 )}
               >
-                <Terror />
-              </div>
-
-              <div
-                tabindex="0"
-                class={clsx(
-                  "code-card transform group-hover:opacity-75 group-focus-within:opacity-75 group-focus-within:blur-sm group-hover:blur-sm focus:!blur-none hover:!blur-none filter focus:!opacity-100 hover:!opacity-100 pointer-events-auto h-fit max-lg:max-w-[calc(100vw_-_3rem)] lg:min-w-96 max-lg:[&:not(:first-child)]:-mt-24 lg:[&:not(:first-child)]:-ml-32 transition-all rounded-sm",
-                  focusStyles
-                )}
-              >
-                <Awesome />
+                <LazyUsage />
               </div>
             </div>
           </div>
@@ -239,7 +227,7 @@ const { Content: Awesome } = await awesome.render();
 <script>
   const story = document.querySelectorAll(".story");
   const storyBits = Array.from(story);
-  const codeSnippets = document.querySelectorAll(".code-card");
+  const codeSnippets = document.querySelectorAll(".step-card");
   const codeSnippetsArray = Array.from(codeSnippets);
 
   codeSnippetsArray.forEach((el, i) => {
@@ -296,10 +284,10 @@ const { Content: Awesome } = await awesome.render();
     @apply p-4 rounded shadow-lg-up lg:shadow-lg shadow-gray-A3 lg:shadow-gray-A3 border border-gray-A5;
   }
 
-  .code-card:hover ~ .code-card {
-    @apply max-lg:translate-y-28 lg:translate-x-36;
+  .step-card:hover ~ .step-card {
+    @apply max-lg:translate-y-28 lg:translate-x-52;
   }
-  .code-card:focus-within ~ .code-card {
-    @apply max-lg:translate-y-28 lg:translate-x-36;
+  .step-card:focus-within ~ .step-card {
+    @apply max-lg:translate-y-28 lg:translate-x-52;
   }
 </style>
