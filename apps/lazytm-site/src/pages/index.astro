@@ -84,7 +84,7 @@ const { Content: LazyUsage } = await lazyUsage.render();
     class="min-h-screen bg-black text-gray-A11 selection:bg-gray-A11 selection:text-gray-2"
   >
     <div
-      class="h-full flex flex-col items-center justify-between gap-8 p-6 sm:pt-24"
+      class="h-full flex flex-col items-center justify-between gap-8 p-6 sm:pt-24 min-h-screen"
     >
       <main
         class="max-w-3xl mx-auto flex flex-col gap-6 justify-center items-center relative"
@@ -203,7 +203,7 @@ const { Content: LazyUsage } = await lazyUsage.render();
           </div>
         </div>
       </main>
-      <footer class="relative z-10">
+      <footer class="relative z-10 mt-12">
         Made by <a
           class={clsx(
             "hover:text-gray-12 focus:text-gray-12 transition-colors rounded whitespace-nowrap",
