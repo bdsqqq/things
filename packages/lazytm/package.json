@@ -1,7 +1,7 @@
 {
   "name": "@bdsqqq/lazytm",
   "scope": "@bdsqqq/",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "access": "public",
   "description": "Why compute something now, when you can compute it later?",
   "displayName": "lazy™",
