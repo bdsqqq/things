@@ -1,10 +1,10 @@
 {
   "name": "@bdsqqq/lazytm",
-  "displayName": "lazy-things",
   "scope": "@bdsqqq/",
   "version": "0.0.1",
   "access": "public",
-  "description": "",
+  "description": "Why compute something now, when you can compute it later?",
+  "displayName": "lazy™",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "scripts": {
@@ -13,10 +13,10 @@
     "dev": "npm run build -- --watch"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "Igor Bedesqui",
+  "license": "MIT",
   "devDependencies": {
-    "tsup": "^6.7.0",
-    "tsconfig": "workspace:*"
+    "tsconfig": "workspace:*",
+    "tsup": "^6.7.0"
   }
 }
