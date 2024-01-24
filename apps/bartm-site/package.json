@@ -10,11 +10,13 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@bdsqqq/bartm": "workspace:*",
     "@astrojs/check": "^0.4.1",
+    "@astrojs/solid-js": "^4.0.1",
     "@astrojs/tailwind": "^5.1.0",
+    "@bdsqqq/bartm": "workspace:*",
     "astro": "^4.2.3",
     "classnames": "^2.5.1",
+    "solid-js": "^1.8.12",
     "tailwind-merge": "^2.2.1",
     "tailwindcss": "^3.4.1",
     "typescript": "^5.3.3"
