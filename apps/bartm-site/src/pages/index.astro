@@ -14,6 +14,9 @@ export function cn(...inputs: ArgumentArray) {
   return twMerge(classnames(inputs));
 }
 
+const version = await fetch("https://registry.npmjs.org/@bdsqqq/bartm").then(
+  (res) => res.json()
+).then((res) => res["dist-tags"].latest);
 ---
 
 <html lang="en">
@@ -73,13 +76,13 @@ export function cn(...inputs: ArgumentArray) {
     <script async src="https://analytics.qui.gg/script.js" data-website-id="6cc89bfb-c6a6-4ff7-845c-3c87469448f8"></script>
   </head>
   <body
-    class="min-h-screen bg-black text-gray-A11 selection:bg-gray-A11 selection:text-gray-2"
+    class="bg-black text-gray-A11 selection:bg-gray-A11 selection:text-gray-2"
   >
     <div
-      class="h-full flex flex-col items-center justify-between gap-8 p-6 sm:pt-24 min-h-screen"
+      class="justify-center min-h-screen items-baseline grid grid-rows-[1fr_auto] gap-8 p-6 sm:pt-24"
     >
       <main
-        class="max-w-3xl mx-auto flex flex-col gap-6 justify-center items-center relative"
+        class="max-w-3xl mx-auto flex-grow flex flex-col gap-6 justify-center items-center relative"
       >
         <div class="max-w-xl w-full mx-auto">
           <div class="text-left space-y-4">
@@ -87,7 +90,7 @@ export function cn(...inputs: ArgumentArray) {
               <div class="flex justify-between items-end gap-12">
                 <div>
                   <div class="max-md:mb-1">
-                    <Glitch text="v0.0.2" />
+                    <Glitch text={`v${version}`} />
                   </div>
                   <h1
                     class="before:bg-shine relative text-gray-A12 text-4xl md:text-7xl leading-relaxed md:leading-snug tracking-tighter text-slate-12 font-bold"
@@ -138,23 +141,11 @@ export function cn(...inputs: ArgumentArray) {
         </div>
 
         <div class="w-full mx-auto space-y-6">
-          <div class="-mx-6 lg:mx-auto max-lg:sticky top-0 z-10">
-            <div class="bg-black max-lg:pt-4 max-lg:px-6 w-full">
-              <p class="max-w-xl mx-auto">
-                
-              </p>
-            </div>
-            <div
-              class="bg-gradient-to-b from-black to-transparent h-20 -mb-10 lg:hidden pointer-events-none"
-            >
-            </div>
-          </div>
-
           
-          </div>
         </div>
       </main>
-      <footer class="relative z-10 mt-12">
+
+      <footer class="flex-shrink-0 w-full flex justify-center">
         Made by <a
           class={cn(
             "hover:text-gray-12 focus:text-gray-12 transition-colors rounded whitespace-nowrap",
