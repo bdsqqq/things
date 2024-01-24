@@ -30,7 +30,7 @@ const { class: classes } = Astro.props;
 
   let currentTimeout: null | ReturnType<typeof setTimeout> = null;
 
-  const updateIcons = (currentTimeout: null | number) => {
+  const updateIcons = (currentTimeout: null | ReturnType<typeof setTimeout>) => {
     currentTimeout && clearTimeout(currentTimeout);
 
     copyIconContainers.forEach((el) => {
