@@ -1,7 +1,7 @@
 {
   "name": "@bdsqqq/bartm",
   "scope": "@bdsqqq/",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "access": "public",
   "description": "Because text-based graphics look way too good.",
   "displayName": "bar™",
