@@ -1,0 +1,177 @@
+---
+import Glitch from "../components/glitch.astro";
+import GithubIcon from "../components/githubIcon.astro";
+import CopyButton from "../components/copyButton.astro";
+
+export const focusStyles = `
+  !outline-none focus-visible:ring-1 ring-offset-8 ring-gray-A10 ring-offset-gray-0
+`;
+
+import { type ArgumentArray, default as classnames } from 'classnames';
+import { twMerge } from 'tailwind-merge';
+
+export function cn(...inputs: ArgumentArray) {
+  return twMerge(classnames(inputs));
+}
+
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/favicon/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/favicon/favicon-16x16.png"
+    />
+    <link rel="manifest" href="/favicon/site.webmanifest" />
+    <link
+      rel="mask-icon"
+      href="/favicon/safari-pinned-tab.svg"
+      color="#000000"
+    />
+    <link rel="shortcut icon" href="/favicon/favicon.ico" />
+    <meta name="msapplication-TileColor" content="#da532c" />
+    <meta name="msapplication-config" content="/favicon/browserconfig.xml" />
+    <meta name="theme-color" content="#ffffff" />
+
+    <meta
+      name="description"
+      content={"Because text-based graphics look way too good."}
+    />
+
+    <meta
+      property="og:title"
+      content={"Bar™ - Text-based progress bar generator"}
+    />
+    <meta
+      property="og:description"
+      content={`Because text-based graphics look way too good.`}
+    />
+    <meta property="og:image" content="/og.jpg" />
+    <meta name="twitter:image" content="/og.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Bar™ - Text-based progress bar generator</title>
+
+    <!-- I like the numbers, sorry -->
+    <script async src="https://analytics.qui.gg/script.js" data-website-id="6cc89bfb-c6a6-4ff7-845c-3c87469448f8"></script>
+  </head>
+  <body
+    class="min-h-screen bg-black text-gray-A11 selection:bg-gray-A11 selection:text-gray-2"
+  >
+    <div
+      class="h-full flex flex-col items-center justify-between gap-8 p-6 sm:pt-24 min-h-screen"
+    >
+      <main
+        class="max-w-3xl mx-auto flex flex-col gap-6 justify-center items-center relative"
+      >
+        <div class="max-w-xl w-full mx-auto">
+          <div class="text-left space-y-4">
+            <div class="space-y-2">
+              <div class="flex justify-between items-end gap-12">
+                <div>
+                  <div class="max-md:mb-1">
+                    <Glitch text="v0.0.2" />
+                  </div>
+                  <h1
+                    class="before:bg-shine relative text-gray-A12 text-4xl md:text-7xl leading-relaxed md:leading-snug tracking-tighter text-slate-12 font-bold"
+                  >
+                    bar™
+                  </h1>
+                </div>
+
+                <div>
+                  <div class="flex flex-col gap-2 items-end">
+                    <div class="hidden md:block">
+                      <CopyButton />
+                    </div>
+                    <a
+                      class={cn(
+                        "flex items-center gap-2 hover:text-gray-12 transition-colors focus:text-gray-12 rounded",
+                        focusStyles
+                      )}
+                      href="https://github.com/bdsqqq/things/tree/main/packages/bartm"
+                    >
+                      <div class="transform translate-y-px">
+                        <GithubIcon />
+                      </div> bdsqqq/bartm
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="max-w-xl w-full mx-auto mt-12">
+                <ul class="flex justify-between text-gray-8 font-bold text-sm">
+                  <li>0 dependencies</li>
+                  <li>{"<1kb gzipped"}</li>
+                  <li>Fully typesafe</li>
+                </ul>
+              </div>
+
+              <h2 class="text-justify">
+                <span>
+                  Because text-based graphics look way too good.
+                </span>
+              </h2>
+            </div>
+
+            <div class="flex justify-center mt-4 md:hidden">
+              <CopyButton />
+            </div>
+          </div>
+        </div>
+
+        <div class="w-full mx-auto space-y-6">
+          <div class="-mx-6 lg:mx-auto max-lg:sticky top-0 z-10">
+            <div class="bg-black max-lg:pt-4 max-lg:px-6 w-full">
+              <p class="max-w-xl mx-auto">
+                
+              </p>
+            </div>
+            <div
+              class="bg-gradient-to-b from-black to-transparent h-20 -mb-10 lg:hidden pointer-events-none"
+            >
+            </div>
+          </div>
+
+          
+          </div>
+        </div>
+      </main>
+      <footer class="relative z-10 mt-12">
+        Made by <a
+          class={cn(
+            "hover:text-gray-12 focus:text-gray-12 transition-colors rounded whitespace-nowrap",
+            focusStyles
+          )}
+          href="https://www.igorbedesqui.com/"
+          ><img
+            class="inline-block w-4 h-4 rounded-full"
+            src="./profile.jpg"
+            alt=""
+          /> Igor Bedesqui</a
+        >, in his eternal IBM Retro Summer<abbr
+          title="by the way"
+          class="text-xs text-gray-8 italict align-top transform -translate-x-2 -translate-y-1 inline-block rotate-[24deg]"
+          >btw</abbr
+        >
+      </footer>
+    </div>
+  </body>
+</html>

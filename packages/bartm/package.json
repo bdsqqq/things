@@ -1,0 +1,26 @@
+{
+  "name": "@bdsqqq/bartm",
+  "scope": "@bdsqqq/",
+  "version": "0.0.1",
+  "access": "public",
+  "description": "Because text-based graphics look way too good.",
+  "displayName": "bar™",
+  "main": "./dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsup src/index.ts --format cjs,esm --dts",
+    "dev": "npm run build -- --watch"
+  },
+  "files": [
+    "dist/**/*"
+  ],
+  "keywords": [],
+  "author": "Igor Bedesqui",
+  "license": "MIT",
+  "devDependencies": {
+    "tsconfig": "workspace:*",
+    "tsup": "^6.7.0"
+  }
+}
