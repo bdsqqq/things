@@ -16,7 +16,7 @@ export function cn(...inputs: ArgumentArray) {
 
 const version = await fetch("https://registry.npmjs.org/@bdsqqq/bartm").then(
   (res) => res.json()
-).then((res) => res["dist-tags"].latest);
+).then((res) => res["dist-tags"].latest).catch(() => "?.?.?");
 ---
 
 <html lang="en">
