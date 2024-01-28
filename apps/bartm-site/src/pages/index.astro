@@ -1,7 +1,10 @@
 ---
+import { AstroFont } from "astro-font";
+
 import Glitch from "../components/glitch.astro";
 import GithubIcon from "../components/githubIcon.astro";
 import CopyButton from "../components/copyButton.astro";
+import { InputAndBar } from "../components/dynamicBarWithInput"
 
 export const focusStyles = `
   !outline-none focus-visible:ring-1 ring-offset-8 ring-gray-A10 ring-offset-gray-0
@@ -13,6 +16,8 @@ import { twMerge } from 'tailwind-merge';
 export function cn(...inputs: ArgumentArray) {
   return twMerge(classnames(inputs));
 }
+
+import { bar } from "@bdsqqq/bartm"
 
 const version = await fetch("https://registry.npmjs.org/@bdsqqq/bartm").then(
   (res) => res.json()
@@ -71,6 +76,25 @@ const version = await fetch("https://registry.npmjs.org/@bdsqqq/bartm").then(
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <title>Bar™ - Text-based progress bar generator</title>
+
+    <AstroFont
+      config={[
+        {
+          name: "BerkeleyMono",
+          src: [
+            {
+              style: 'regular',
+              weight: '400',
+              path: './public/fonts/BerkeleyMono-Regular.woff2'
+            },
+          ],
+          preload: true,
+          display: "swap",
+          selector: "body",
+          fallback: "sans-serif",
+        },
+      ]}
+    />
 
     <!-- I like the numbers, sorry -->
     <script async src="https://analytics.qui.gg/script.js" data-website-id="b1cc3d0f-672b-4204-bf8a-289a5a2ff1b8"></script>
@@ -141,7 +165,9 @@ const version = await fetch("https://registry.npmjs.org/@bdsqqq/bartm").then(
         </div>
 
         <div class="w-full mx-auto space-y-6">
-          
+          {bar(20, 10)}
+
+          <InputAndBar client:load />
         </div>
       </main>
 
