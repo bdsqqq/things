@@ -54,7 +54,7 @@ export const InputAndBar = () => {
         characters
       </div>
       {/* 3.815 rem gets us 20 chars max per row in big screens */}
-      <span class="text-[3.815rem] leading-tight center break-all whitespace-pre-line">
+      <span class="text-[3.815rem] leading-tight text-gray-12 center break-all whitespace-pre-line">
         {bar(safePercentage(percentage()), safeWidth(width()))}
       </span>
     </div>
