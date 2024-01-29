@@ -25,6 +25,25 @@ const version = await fetch("https://registry.npmjs.org/@bdsqqq/bartm").then(
 <html lang="en">
   <head>
     <meta charset="utf-8" />
+    
+    <AstroFont
+      config={[
+        {
+          name: "BerkeleyMono",
+          src: [
+            {
+              style: 'regular',
+              weight: '400',
+              path: './public/fonts/BerkeleyMono-Regular.woff2'
+            },
+          ],
+          preload: true,
+          display: "block",
+          selector: "body",
+          fallback: "sans-serif",
+        },
+      ]}
+    />
 
     <link
       rel="apple-touch-icon"
@@ -74,25 +93,6 @@ const version = await fetch("https://registry.npmjs.org/@bdsqqq/bartm").then(
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <title>Bar™ - Text-based progress bar generator</title>
-
-    <AstroFont
-      config={[
-        {
-          name: "BerkeleyMono",
-          src: [
-            {
-              style: 'regular',
-              weight: '400',
-              path: './public/fonts/BerkeleyMono-Regular.woff2'
-            },
-          ],
-          preload: true,
-          display: "block",
-          selector: "body",
-          fallback: "sans-serif",
-        },
-      ]}
-    />
 
     <!-- I like the numbers, sorry -->
     <script async src="https://analytics.qui.gg/script.js" data-website-id="b1cc3d0f-672b-4204-bf8a-289a5a2ff1b8"></script>
