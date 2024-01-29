@@ -47,6 +47,7 @@ export const InputAndBar = () => {
           id="width-input"
           class="bg-gray-A5 rounded-sm border-b border-b-gray-A7 placeholder:text-gray-A9 px-0.5"
           placeholder="10"
+          maxLength={3}
           value={width()}
           onInput={(e) => setWidth(e.target.value)}
         />
