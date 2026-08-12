@@ -14,14 +14,33 @@
   },
   "devDependencies": {
     "eslint-config-custom": "workspace:*",
-    "prettier": "latest",
-    "turbo": "^2.0.12"
+    "prettier": "^3.9.6",
+    "turbo": "^2.10.9"
   },
   "engines": {
-    "node": ">=14.0.0"
+    "node": ">=22.12.0 <23"
   },
   "dependencies": {
-    "@changesets/cli": "^2.26.1"
+    "@changesets/cli": "^3.0.0"
   },
-  "packageManager": "pnpm@7.28.0"
+  "packageManager": "pnpm@10.34.5",
+  "pnpm": {
+    "overrides": {
+      "@babel/core@<7.29.7": "7.29.7",
+      "@babel/helpers@<7.29.7": "7.29.7",
+      "brace-expansion@<2": "1.1.18",
+      "brace-expansion@>=2 <3": "2.1.4",
+      "braces@<3.0.3": "3.0.3",
+      "cross-spawn@<7.0.6": "7.0.6",
+      "esbuild@<0.28.1": "0.28.2",
+      "glob@>=10 <10.5.0": "10.5.0",
+      "mdast-util-to-hast@<13.2.1": "13.2.1",
+      "micromatch@<4.0.8": "4.0.8",
+      "minimatch@<4": "3.1.5",
+      "minimatch@>=9 <10": "9.0.9",
+      "picomatch@<2.3.2": "2.3.2",
+      "sharp@<0.35.0": "0.35.3",
+      "yaml@<2.8.3": "2.9.0"
+    }
+  }
 }

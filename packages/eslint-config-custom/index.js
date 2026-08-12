@@ -1,11 +1,10 @@
 module.exports = {
-  extends: ["next", "turbo", "prettier"],
-  rules: {
-    "@next/next/no-html-link-for-pages": "off",
-  },
+  extends: ["turbo", "prettier"],
   parserOptions: {
-    babelOptions: {
-      presets: [require.resolve("next/babel")],
+    ecmaVersion: "latest",
+    sourceType: "module",
+    ecmaFeatures: {
+      jsx: true,
     },
   },
 };
