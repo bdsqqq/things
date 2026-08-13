@@ -1,4 +1,4 @@
-import plugin from "tailwindcss/plugin";
+import plugin from "tailwindcss/plugin.js";
 
 /**
  * disabled:* applies a class if the element is :disabled, aria-disabled=true, or data-disabled=true

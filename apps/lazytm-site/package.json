@@ -5,14 +5,17 @@
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
-    "build": "astro build",
+    "build": "astro check && astro build",
     "preview": "astro preview",
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/tailwind": "^3.0.1",
-    "astro": "^2.0.14",
-    "clsx": "^1.2.1",
-    "tailwindcss": "^3.2.6"
+    "@astrojs/check": "^0.9.10",
+    "astro": "^7.2.1",
+    "autoprefixer": "^10.4.27",
+    "clsx": "^2.1.1",
+    "postcss": "^8.5.23",
+    "tailwindcss": "^3.4.19",
+    "typescript": "^5.9.3"
   }
 }

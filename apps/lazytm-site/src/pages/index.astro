@@ -1,22 +1,24 @@
 ---
+import "../styles/global.css";
+
 import Glitch from "../components/glitch.astro";
 import GithubIcon from "../components/githubIcon.astro";
 import CopyButton from "../components/copyButton.astro";
 
 import { clsx } from "clsx";
-import { getEntryBySlug } from "astro:content";
+import { getEntry, render } from "astro:content";
 
 export const focusStyles = `
   !outline-none focus-visible:ring-1 ring-offset-8 ring-gray-A10 ring-offset-gray-0
 `;
 
-const basicUsage = await getEntryBySlug("codesnippets", "basic-usage");
-const harshUsage = await getEntryBySlug("codesnippets", "harsh-usage");
-const lazyUsage = await getEntryBySlug("codesnippets", "lazy-usage");
+const basicUsage = await getEntry("codesnippets", "basic-usage");
+const harshUsage = await getEntry("codesnippets", "harsh-usage");
+const lazyUsage = await getEntry("codesnippets", "lazy-usage");
 
-const { Content: BasicUsage } = await basicUsage.render();
-const { Content: HarshUsage } = await harshUsage.render();
-const { Content: LazyUsage } = await lazyUsage.render();
+const { Content: BasicUsage } = await render(basicUsage!);
+const { Content: HarshUsage } = await render(harshUsage!);
+const { Content: LazyUsage } = await render(lazyUsage!);
 ---
 
 <html lang="en">
