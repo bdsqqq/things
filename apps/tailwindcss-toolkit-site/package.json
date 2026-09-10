@@ -13,7 +13,7 @@
     "@astrojs/check": "^0.9.10",
     "@astrojs/solid-js": "^7.0.2",
     "@bdsqqq/tailwindcss-toolkit": "workspace:*",
-    "astro": "^7.2.1",
+    "astro": "^7.2.8",
     "astro-font": "^1.2.0",
     "autoprefixer": "^10.4.27",
     "classnames": "^2.5.1",
